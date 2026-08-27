@@ -1,0 +1,253 @@
+.orbit-control {
+  position: absolute;
+
+  z-index: 10;
+
+  display: grid;
+
+  grid-template-columns:
+    128px
+    128px;
+
+  grid-template-rows:
+    128px
+    128px;
+
+  gap: 8px;
+
+  pointer-events: auto;
+}
+
+
+/* CAMERA */
+
+.orbit-control--camera {
+  left: 20px;
+  bottom: 20px;
+}
+
+
+/* LIGHT */
+
+.orbit-control--light {
+  right: 20px;
+  bottom: 20px;
+}
+
+
+/* LABEL */
+
+.orbit-control__label {
+  position: absolute;
+
+  top: -18px;
+
+  color: #111;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.orbit-control--left
+.orbit-control__label {
+  left: 0;
+}
+
+
+.orbit-control--right
+.orbit-control__label {
+  right: 0;
+}
+
+
+/* PROJECTION */
+
+.orbit-projection {
+  position: relative;
+
+  width: 128px;
+  height: 128px;
+
+  border: 1px solid
+    rgba(
+      0,
+      0,
+      0,
+      0.16
+    );
+
+  cursor: crosshair;
+
+  touch-action: none;
+}
+
+
+.orbit-projection--inactive {
+  cursor: default;
+}
+
+
+/* LEFT CONTROL
+
+       T
+       |
+       F -- R
+*/
+
+.orbit-control--left
+.orbit-projection--top {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+
+.orbit-control--left
+.orbit-projection--front {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+.orbit-control--left
+.orbit-projection--right {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+/* RIGHT CONTROL
+
+             T
+             |
+       L -- F
+*/
+
+.orbit-control--right
+.orbit-projection--top {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+
+.orbit-control--right
+.orbit-projection--front {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+
+.orbit-control--right
+.orbit-projection--left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+
+/* ORBIT GEOMETRY */
+
+.orbit-projection__geometry {
+  position: absolute;
+
+  inset: 0;
+
+  transition:
+    opacity 120ms ease;
+}
+
+
+.orbit-projection__geometry--hidden {
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+.orbit-projection__ring {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  border: 1px solid
+    rgba(
+      0,
+      0,
+      0,
+      0.45
+    );
+
+  border-radius: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  pointer-events: none;
+}
+
+
+.orbit-projection__handle {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 10px;
+  height: 10px;
+
+  margin-left: -5px;
+  margin-top: -5px;
+
+  border-radius: 50%;
+
+  background: #111;
+
+  pointer-events: none;
+}
+
+
+/* CUBE / PROJECTION LABEL */
+
+.orbit-projection__cube {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  border: 1px solid
+    rgba(
+      0,
+      0,
+      0,
+      0.75
+    );
+
+  color: #111;
+
+  background: #f2f2f2;
+
+  font-size: 9px;
+  font-weight: 600;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  pointer-events: none;
+}

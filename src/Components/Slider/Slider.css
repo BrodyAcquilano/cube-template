@@ -1,0 +1,43 @@
+.slider {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #111;
+}
+
+
+.slider__label {
+  font-size: 10px;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+.slider__input {
+  width: 8px;
+  height: 150px;
+
+  writing-mode: vertical-lr;
+
+  direction: rtl;
+
+  cursor: pointer;
+
+  accent-color: #111;
+}
+
+
+.slider__value {
+  min-width: 32px;
+
+  font-size: 10px;
+
+  text-align: center;
+}

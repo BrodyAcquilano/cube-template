@@ -1,0 +1,18 @@
+.lighting-controls {
+  position: absolute;
+
+  top: 24px;
+  right: 24px;
+
+  z-index: 10;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+  padding: 12px;
+
+  pointer-events: auto;
+}

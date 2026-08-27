@@ -1,0 +1,129 @@
+.toggle {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 7px;
+
+  pointer-events: auto;
+}
+
+
+.toggle__track {
+  position: relative;
+
+  width: 46px;
+  height: 24px;
+
+  padding: 0;
+
+  border: 1px solid
+    rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
+
+  border-radius: 999px;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.12
+    );
+
+  cursor: pointer;
+
+  transition:
+    background 140ms ease,
+    border-color 140ms ease;
+}
+
+
+.toggle__track--active {
+  border-color:
+    rgba(
+      0,
+      0,
+      0,
+      0.85
+    );
+
+  background: #111;
+}
+
+
+.toggle__thumb {
+  position: absolute;
+
+  left: 3px;
+  top: 3px;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background: #fff;
+
+  box-shadow:
+    0 1px 4px
+    rgba(
+      0,
+      0,
+      0,
+      0.25
+    );
+
+  transition:
+    transform 140ms ease;
+}
+
+
+.toggle__track--active
+.toggle__thumb {
+  transform:
+    translateX(
+      21px
+    );
+}
+
+
+.toggle__label {
+  padding:
+    4px
+    7px;
+
+  border: 1px solid
+    rgba(
+      0,
+      0,
+      0,
+      0.15
+    );
+
+  border-radius: 4px;
+
+  color: #111;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.85
+    );
+
+  font-size: 9px;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
